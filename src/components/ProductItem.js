@@ -14,12 +14,17 @@ export default function ProductItem({ product }) {
             <img className="product-item_image" src={product.product_image} />
           </div>
           <h6 className="product-item_title">{product.product_name}</h6>
-          <div className="d-flex align-items-center justify-content-start mb-1">
-            <Stars stars={product.rating} />
-            <small>
-              {`(${product.comment_total != null ? product.comment_total : 0})`}
-            </small>
-          </div>
+          {product.rating && (
+            <div className="d-flex align-items-center justify-content-start mb-1">
+              <Stars stars={product.rating} />
+              <small>
+                {`(${
+                  product.comment_total != null ? product.comment_total : 0
+                })`}
+              </small>
+            </div>
+          )}
+
           {product.product_discount > 0 ? (
             <>
               <span className="product-item_price">

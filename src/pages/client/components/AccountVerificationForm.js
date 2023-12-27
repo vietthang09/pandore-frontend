@@ -157,18 +157,15 @@ export default function AccountVerificationForm(props) {
           ) : (
             <div className="col-md-12 text-center">
               <Link to="" className="text-decoration-none">
-                <span className="h1 text-uppercase text-info bg-dark px-2">
-                  Multi
-                </span>
                 <span className="h1 text-uppercase text-white bg-info px-2 ml-n1">
-                  Shop
+                  Pandore
                 </span>
               </Link>
               <h4 className="mb-3 text-center my-5">
                 <span className="pr-3">Verify your email address</span>
               </h4>
               <span>
-                Please confirm that you want to use this as your HLE Ecommerce
+                Please confirm that you want to use this as your Pandore
                 account email address.
                 <br /> Once it's done you will be able to start buying!
               </span>

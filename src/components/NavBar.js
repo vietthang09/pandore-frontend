@@ -174,8 +174,8 @@ export default function NavBar() {
       <div className="d-lg-none">
         <div className="d-flex justify-content-between align-items-center px-2 py-2 fixed-top bg-info">
           <Link to="/" className="text-decoration-none">
-            <span className="text-uppercase text-info bg-white px-1">SKA</span>
-            <span className="text-uppercase text-white bg-info">Buy</span>
+            <span className="text-uppercase text-info bg-white px-1">Pandore</span>
+            {/*<span className="text-uppercase text-white bg-info">Buy</span>*/}
           </Link>
 
           <div className="bg-white mx-3 px-2 d-flex align-items-center rounded-pill w-100 border">
@@ -208,8 +208,8 @@ export default function NavBar() {
         <div className="Header-nav container py-1 d-flex justify-content-between align-items-center">
           <div className="d-flex align-items-center">
             <Link to="/" className="text-decoration-none">
-              <span className="h1 text-info bg-white px-2 rounded">SKA</span>
-              <span className="h1 text-white bg-info px-2">Buy</span>
+              <span className="h1 text-info bg-white px-2 rounded">Pandore</span>
+              {/*<span className="h1 text-white bg-info px-2">Buy</span>*/}
             </Link>
             <DropdownSection />
           </div>

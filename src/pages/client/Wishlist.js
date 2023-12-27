@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import { sendGetRequest } from "../../util/fetchAPI";
+import { Link } from "react-router-dom";
+import { TrashIcon } from "@heroicons/react/24/outline";
+
+import { sendGetRequest, sendPostRequest } from "../../util/fetchAPI";
 import { baseURL } from "../../util/constants";
 import { useSelector } from "react-redux";
-// import Products from "./components/Products";
+import ProductItem from "../../components/ProductItem";
 import { showToast } from "../../util/helper";
-import { Link } from "react-router-dom";
+
 export default function Wishlist() {
   const userRedux = useSelector((state) => state.user);
   const [products, setProducts] = useState([]);
@@ -19,12 +22,30 @@ export default function Wishlist() {
       showToast("ERROR", response.message);
     }
   }
+
+  const removeFromWishlistHandler = async (id) => {
+    var requestData = {
+      data: {
+        id: id,
+      },
+    };
+    const response = await sendPostRequest(
+      `${baseURL}/wishlist/delete`,
+      requestData
+    );
+    if (response.status == "success") {
+      showToast("SUCCESS", "Product removed successful");
+      setReloadWishlist(true);
+    } else {
+      showToast("ERROR", response.message);
+    }
+  };
   useEffect(() => {
     getProducts();
     setReloadWishlist(false);
   }, [reloadWishlist]);
   return (
-    <div className="container-fluid">
+    <div className="container-fluid my-24">
       <div className="row px-xl-5">
         <div className="col-12">
           <nav className="breadcrumb bg-light mb-30">
@@ -36,8 +57,18 @@ export default function Wishlist() {
         </div>
       </div>
 
-      <div className="row px-xl-5">
-        {/* <Products products={products} setUpdate={setReloadWishlist} /> */}
+      <div className="row px-xl-5 gap-4">
+        {products.map((product, index) => {
+          return (
+            <div className="relative">
+              <ProductItem product={product} />
+              <TrashIcon
+                className="absolute top-0 right-0 w-6 text-red-500 cursor-pointer"
+                onClick={() => removeFromWishlistHandler(product.wishlist_id)}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

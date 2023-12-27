@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="row px-xl-5 pt-5">
           <div className="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
             <h5 className="text-secondary text-uppercase mb-4">
-              HLE E-commere
+              Pandore
             </h5>
             <p className="mb-4">
               No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et
@@ -19,7 +19,7 @@ export default function Footer() {
             </p>
             <p className="mb-2">
               <i className="fa fa-envelope text-primary mr-3"></i>
-              Lmhuy.18it3@vku.udn.vn
+              pandore.online@gmail.com
             </p>
             <p className="mb-0">
               <i className="fa fa-phone-alt text-primary mr-3"></i>+012 345

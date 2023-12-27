@@ -179,11 +179,11 @@ export default function Admin() {
                   <div>
                     <Link to="" className="text-decoration-none">
                       <span className="h5 text-uppercase text-info bg-dark px-2">
-                        HLE
+                        Pandore
                       </span>
-                      <span className="h5 text-uppercase text-white bg-info px-2 ml-n1">
+                      {/* <span className="h5 text-uppercase text-white bg-info px-2 ml-n1">
                         E-commere
-                      </span>
+                      </span> */}
                     </Link>
                   </div>
                 )}
@@ -202,7 +202,7 @@ export default function Admin() {
                 ) : (
                   <MenuFoldOutlined onClick={() => setCollapsed(!collapsed)} />
                 )}
-                <span style={{ paddingLeft: 20 }}>HLE E-commere</span>
+                <span style={{ paddingLeft: 20 }}>Pandore</span>
               </Header>
               <Content
                 className="site-layout-background"
